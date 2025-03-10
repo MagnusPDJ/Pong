@@ -52,12 +52,12 @@ class Ball(pygame.sprite.Sprite):
    
     def rotate_player(self, dist):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
-        angle = 270 - 90 * dist
+        angle = 270 - 80 * dist
         self.rotation = angle
 
     def rotate_opponent(self, dist):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
-        angle = 90 - 90 * dist
+        angle = 90 - 80 * dist
         self.rotation = angle
  
     def check_hit(self, rect):

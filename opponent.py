@@ -23,8 +23,8 @@ class Opponent(pygame.sprite.Sprite):
 
     def update(self, dt, ball):
         d = self.direction(ball)
-        if ball.position.x < SCREEN_WIDTH*0.6 and self.randommovementtimer == 0:
-            self.randommovementtimer = 20
+        if ball.spawncd >= 0.5 and ball.position.x < SCREEN_WIDTH*0.5 and self.randommovementtimer == 0:
+            self.randommovementtimer = 15
             self.randommovement = random.choice(movement)
         if self.randommovementtimer > 0 and self.position.y <= SCREEN_HEIGHT - self.height/2.0 and self.position.y >= self.height/2.0:
             self.move(dt*self.randommovement)
